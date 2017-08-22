@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Animal } from './animal';
 import {Sector} from './sector';
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
     selector: 'app-animals',
@@ -22,7 +23,7 @@ export class AnimalListComponent {
         this.animals = [
             new Animal('guster', 'Dzeki', '', this.sectors[2]),
             new Animal('konj', 'Milo', '11.03.2001.', this.sectors[1]),
-            new Animal('riba', 'Suna', '25.11.2010.', this.sectors[0])
+            new Animal('riba', 'Suna', '25.11.2010.', this.sectors[1])
         ];
 
     }
@@ -48,5 +49,16 @@ export class AnimalListComponent {
         this.newAnimal.ime = ime;
         this.newAnimal.datumRodjenja = datumRodjenja;
         this.animals.push(this.newAnimal);
+    }
+
+    listaZivotinja(sektor) {
+        const sectorAnimals: any[] = [];
+        const animal = '';
+        for (let animal of this.animals) {
+            if (animal.sektor.ime == sektor.ime) {
+                sectorAnimals.push(animal.ime);
+            }
+        }
+        alert(sectorAnimals);
     }
 }

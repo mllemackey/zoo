@@ -28,3 +28,17 @@
     </tr>
 
 </table>
+
+<h2>Sektori:</h2>
+<table>
+    <tr>
+        <th>Ime</th>
+        <th>Povrsina</th>
+    </tr>
+    <tr *ngFor="let sector of sectors">
+        <td>{{ sector.ime }}</td>
+        <td>{{ sector.povrsina }}</td>
+        <td><button (click)="listaZivotinja(sector)">Vidi Listu Zivotinja</button></td>
+    </tr>
+
+</table>
