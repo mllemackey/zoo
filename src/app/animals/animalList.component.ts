@@ -1,41 +1,21 @@
 import { Component } from '@angular/core';
+import { Animal } from './animal';
 
 @Component({
     selector: 'app-animals',
     templateUrl: './animalList.component.html'
 })
 export class AnimalListComponent {
-
-    private animals: any[];
+    public animals: any[];
 
     constructor(){
+
         this.animals = [
-            {
-                vrsta:  'pas',
-                ime:    'Dzeki',
-                datumRodjenja:  ''
-            },
-            {
-                vrsta:  'konj',
-                ime:    'Milo',
-                datumRodjenja:  '11.03.2001.'
-            },
-            {
-                vrsta:  'riba',
-                ime:    'Suna',
-                datumRodjenja:  '25.11.2010.'
-            },
-            {
-                vrsta:  'majmun',
-                ime:    'Zvrle',
-                datumRodjenja:  ''
-            },
-            {
-                vrsta:  'kornjaca',
-                ime:    'Mardz',
-                datumRodjenja:  '19.02.2006.'
-            }
+            new Animal('pas', 'Dzeki', ''),
+            new Animal('konj', 'Milo', '11.03.2001.'),
+            new Animal('riba', 'Suna', '25.11.2010.')
         ];
+
     }
 
     remove(animal){
