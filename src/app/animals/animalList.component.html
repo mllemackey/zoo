@@ -8,10 +8,10 @@
     <tr *ngFor="let animal of animals">
         <td>{{ animal.vrsta }}</td>
         <td>{{ animal.ime }}</td>
-        <td *ngIf="animal.datumRodjenja!=''">
+        <td>
             {{ animal.datumRodjenja ? animal.datumRodjenja : 'Nepoznato' }}
         </td>
-
+        <td><button (click)="remove(animal)">Remove</button></td>
     </tr>
 
 </table>
