@@ -13,7 +13,7 @@ export class AnimalListComponent {
             {
                 vrsta:  'pas',
                 ime:    'Dzeki',
-                datumRodjenja:  '01.01.2011.'
+                datumRodjenja:  ''
             },
             {
                 vrsta:  'konj',
@@ -28,7 +28,7 @@ export class AnimalListComponent {
             {
                 vrsta:  'majmun',
                 ime:    'Zvrle',
-                datumRodjenja:  '12.12.2012.'
+                datumRodjenja:  ''
             },
             {
                 vrsta:  'kornjaca',
