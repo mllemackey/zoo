@@ -12,6 +12,7 @@
             {{ animal.datumRodjenja ? animal.datumRodjenja : 'Nepoznato' }}
         </td>
         <td><button (click)="remove(animal)">Remove</button></td>
+        <td><button (click)="moveToTop(animal)">Move To Top</button></td>
     </tr>
 
 </table>
