@@ -7,6 +7,7 @@ import { Animal } from './animal';
 })
 export class AnimalListComponent {
     public animals: any[];
+    public newAnimal: Animal = new Animal('', '', '');
 
     constructor(){
 
@@ -22,6 +23,22 @@ export class AnimalListComponent {
 
         const index = this.animals.indexOf(animal);
         this.animals.splice(index,1);
+
+    }
+
+    moveToTop(animal){
+
+        const index = this.animals.indexOf(animal);
+        this.animals.splice(index,1);
+        this.animals.unshift(animal);
+
+    }
+    addAnimal(vrsta, ime, datumRodjenja) {
+
+        this.newAnimal.vrsta = vrsta;
+        this.newAnimal.ime = ime;
+        this.newAnimal.datumRodjenja = datumRodjenja;
+        this.animals.push(this.newAnimal);
 
     }
 }

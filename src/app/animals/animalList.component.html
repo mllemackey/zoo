@@ -1,4 +1,16 @@
 <h1>Animal Zoo</h1>
+<h2>Uneti novu zivotinju:</h2>
+<form>
+    <label for="vrsta">Vrsta</label>
+    <input type="text" name="vrsta" [(ngModel)]="newAnimal.vrsta" />
+    <label for="ime">Ime</label>
+    <input type="text" name="ime" [(ngModel)]="newAnimal.ime" />
+    <label for="datumRodjenja">Datum Rodjenja</label>
+    <input type="text" name="datumRodjenja" [(ngModel)]="newAnimal.datumRodjenja" />
+    <button type="submit" (click)="addAnimal(newAnimal.vrsta, newAnimal.ime, newAnimal.datumRodjenja)">Dodaj</button>
+</form>
+
+<h2>Zivotinje:</h2>
 <table>
     <tr>
         <th>Vrsta</th>
@@ -12,6 +24,7 @@
             {{ animal.datumRodjenja ? animal.datumRodjenja : 'Nepoznato' }}
         </td>
         <td><button (click)="remove(animal)">Remove</button></td>
+        <td><button (click)="moveToTop(animal)">Move To Top</button></td>
     </tr>
 
 </table>
