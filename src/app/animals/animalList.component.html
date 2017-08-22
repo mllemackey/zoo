@@ -14,6 +14,7 @@
         <th>Vrsta</th>
         <th>Ime</th>
         <th>Datum Rodjenja</th>
+        <th>Sektor</th>
     </tr>
     <tr *ngFor="let animal of animals">
         <td>{{ animal.vrsta }}</td>
@@ -21,6 +22,7 @@
         <td>
             {{ animal.datumRodjenja ? animal.datumRodjenja : 'Nepoznato' }}
         </td>
+        <td>{{ animal.sektor.ime }}</td>
         <td><button (click)="remove(animal)">Remove</button></td>
         <td><button (click)="moveToTop(animal)">Move To Top</button></td>
     </tr>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Animal } from './animal';
+import {Sector} from './sector';
 
 @Component({
     selector: 'app-animals',
@@ -7,26 +8,33 @@ import { Animal } from './animal';
 })
 export class AnimalListComponent {
     public animals: any[];
-    public newAnimal: Animal = new Animal('', '', '');
+    public sectors: any[];
+    public newAnimal: Animal = new Animal('', '', '', new Sector('', ''));
 
     constructor(){
 
+        this.sectors = [
+            new Sector('vodeneZivotinje', '10'),
+            new Sector('sisari', '20'),
+            new Sector('gmizavci', '15')
+        ];
+
         this.animals = [
-            new Animal('pas', 'Dzeki', ''),
-            new Animal('konj', 'Milo', '11.03.2001.'),
-            new Animal('riba', 'Suna', '25.11.2010.')
+            new Animal('guster', 'Dzeki', '', this.sectors[2]),
+            new Animal('konj', 'Milo', '11.03.2001.', this.sectors[1]),
+            new Animal('riba', 'Suna', '25.11.2010.', this.sectors[0])
         ];
 
     }
 
-    remove(animal){
+    remove(animal) {
 
         const index = this.animals.indexOf(animal);
         this.animals.splice(index,1);
 
     }
 
-    moveToTop(animal){
+    moveToTop(animal) {
 
         const index = this.animals.indexOf(animal);
         this.animals.splice(index,1);
