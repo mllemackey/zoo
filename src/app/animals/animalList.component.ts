@@ -39,6 +39,5 @@ export class AnimalListComponent {
         this.newAnimal.ime = ime;
         this.newAnimal.datumRodjenja = datumRodjenja;
         this.animals.push(this.newAnimal);
-
     }
 }
