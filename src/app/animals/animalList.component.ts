@@ -33,6 +33,7 @@ export class AnimalListComponent {
         this.animals.unshift(animal);
 
     }
+
     addAnimal(vrsta, ime, datumRodjenja) {
 
         this.newAnimal.vrsta = vrsta;
